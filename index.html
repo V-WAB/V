@@ -401,6 +401,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
 /* single column on laptops: the empty margin column is gone */
 @media (min-width:960px){.row{grid-template-columns:minmax(0,1fr)}.film{padding-left:max(40px,(100vw - 1200px)/2 + 40px)}}
 .margin:empty{display:none}
+.film::after{content:"";flex:0 0 max(16px,(100vw - 1200px)/2 + 40px)}
 /* profile: photo beside a short bio */
 .profile{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
 @media (min-width:900px){.profile{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}}
@@ -478,13 +479,13 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     <div class="sheet-track" id="sheetTrack">
       <div class="sheet-pin" id="sheetPin">
         <div class="film" id="film">
-          <figure class="frame" id="pickFrame" style="--ar:4/5"><svg class="pick" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M52 3 C 82 2, 99 22, 98 50 C 97 80, 76 98, 48 97 C 18 96, 2 78, 3 49 C 4 22, 22 5, 56 6"/></svg><div class="ph"><img src="assets/img/fn-stage.jpg" alt="Vanessa in a red dress on stage at The Top Intern, smiling" loading="lazy"></div><figcaption><b>01 · The Top Intern</b>Season 3 winner, TV3</figcaption></figure>
-          <figure class="frame" style="--ar:4/3"><div class="ph"><img src="assets/img/range.jpg" alt="The Banini Butter range of jars and packaging" loading="lazy"></div><figcaption><b>02 · Banini Butter</b>Founder</figcaption></figure>
-          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></div><figcaption><b>03 · Legalite</b>My legaltech company</figcaption></figure>
-          <figure class="frame" style="--ar:3/4"><div class="ph"><img src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name, holding a bouquet" loading="lazy" style="object-position:50% 30%"></div><figcaption><b>04 · Graduation</b>Actuarial Science, University of Professional Studies, Accra</figcaption></figure>
-          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini for Student Activist of the Year" loading="lazy"></div><figcaption><b>05 · Chairperson</b>Educational and Research Committee, ASSAG</figcaption></figure>
-          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></div><figcaption><b>06 · Robo Club</b>Co-founder and robotics instructor</figcaption></figure>
-          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-handshake.jpg" alt="Vanessa shaking hands with the organisers at the Business Challenge 2024 grand finale" loading="lazy"></div><figcaption><b>07 · Business Challenge</b>2nd runner-up with Tetrol, 2024</figcaption></figure>
+          <figure class="frame" id="pickFrame" style="--ar:4/5"><svg class="pick" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M52 3 C 82 2, 99 22, 98 50 C 97 80, 76 98, 48 97 C 18 96, 2 78, 3 49 C 4 22, 22 5, 56 6"/></svg><div class="ph"><img src="assets/img/fn-stage.jpg" alt="Vanessa in a red dress on stage at The Top Intern, smiling" loading="lazy"></div><figcaption><b>01 · The Top Intern</b>Season 3 winner, TV3, 2026</figcaption></figure>
+          <figure class="frame" style="--ar:4/3"><div class="ph"><img src="assets/img/range.jpg" alt="The Banini Butter range of jars and packaging" loading="lazy"></div><figcaption><b>02 · Banini Butter</b>Founder, 2026</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></div><figcaption><b>03 · Legalite</b>My legaltech company, 2025</figcaption></figure>
+          <figure class="frame" style="--ar:3/4"><div class="ph"><img src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name, holding a bouquet" loading="lazy" style="object-position:50% 30%"></div><figcaption><b>04 · Graduation</b>Actuarial Science, University of Professional Studies, Accra, 2025</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini for Student Activist of the Year" loading="lazy"></div><figcaption><b>05 · Chairperson</b>Educational and Research Committee, ASSAG, 2025</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></div><figcaption><b>06 · Robo Club</b>Co-founder and robotics instructor, 2025</figcaption></figure>
+          <figure class="frame" style="--ar:4/5"><div class="ph"><img src="assets/img/fn-handshake.jpg" alt="Vanessa smiling as she shakes hands at the Business Challenge 2024 grand finale" loading="lazy"></div><figcaption><b>07 · Business Challenge</b>2nd runner-up with Tetrol, 2024</figcaption></figure>
         </div>
       </div>
     </div>
@@ -503,10 +504,10 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
           <ol class="entries" id="entries">
             <li class="entry on" data-year="2026"><div class="yr">2026 · Winner</div><h3>TV3 The Top Intern, Season 3</h3><p>Won the season on national television, with a full Master's scholarship from Academic City University.</p><img class="thumb" src="assets/img/work-top-intern.jpg" alt="TV3 Top Intern Season 3 portrait card of Vanessa Woenam Banini, University of Professional Studies Accra, Actuarial Science" style="object-position:50% 20%" loading="lazy"></li>
             <li class="entry" data-year="2026"><div class="yr">2026 · Founder</div><h3>Banini Butter</h3><p>Whipped shea butter in four blends, sourced from women's cooperatives near Tamale and made in small batches in Accra.</p><img class="thumb" src="assets/img/range.jpg" alt="The Banini Butter range" loading="lazy"></li>
-            <li class="entry" data-year="2026"><div class="yr">2026 · Founder</div><h3>Legalite</h3><p>My company, building a legaltech app. I'm pitching it at the Accra LawTech Hangout on 3 December.</p><img class="thumb" src="assets/img/work-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></li>
-            <li class="entry"><div class="yr">Graduate <span class="sample">Year to confirm</span></div><h3>Actuarial Science, University of Professional Studies, Accra</h3><p>Where the numbers side of the work started.</p><img class="thumb" src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name" loading="lazy" style="object-position:50% 25%"></li>
+            <li class="entry" data-year="2025"><div class="yr">2025 · Founder</div><h3>Legalite</h3><p>My company, building a legaltech app. I'm pitching it at the Accra LawTech Hangout on 3 December.</p><img class="thumb" src="assets/img/work-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></li>
+            <li class="entry" data-year="2025"><div class="yr">2025 · Graduate</div><h3>Actuarial Science, University of Professional Studies, Accra</h3><p>Where the numbers side of the work started.</p><img class="thumb" src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name" loading="lazy" style="object-position:50% 25%"></li>
             <li class="entry" data-year="2025"><div class="yr">2025 · Chairperson</div><h3>Educational and Research Committee, ASSAG</h3><p>Chaired the committee for a little over a year and ran the Beyond Insurance seminar. Voted Student Activist of the Year and Best Committee Chairperson.</p><img class="thumb" src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini as a nominee for Student Activist of the Year" style="object-position:50% 40%" loading="lazy"></li>
-            <li class="entry"><div class="yr">Co-founder · Robotics instructor</div><h3>Robo Club</h3><p>Co-founded Robo Club, where I teach robotics.</p><img class="thumb" src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></li>
+            <li class="entry" data-year="2025"><div class="yr">2025 · Co-founder · Robotics instructor</div><h3>Robo Club</h3><p>Co-founded Robo Club, where I teach robotics.</p><img class="thumb" src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></li>
             <li class="entry" data-year="2024"><div class="yr">2024 · 2nd runner-up</div><h3>Tetrol, MTN Business Challenge</h3><p>Pitched Tetrol, a self-heating, self-cooling lunchbox and bottle flask I designed, at the UPSA Business Challenge 2024, sponsored by MTN Pulse, and placed second runner-up.</p><img class="thumb" src="assets/img/work-tetrol.jpg" alt="The Tetrol self-heating lunchbox, open, filled with food" loading="lazy"></li>
           </ol>
         </div>
@@ -652,7 +653,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     if(!on('m8')){ sheetTrack.classList.add('free'); pickPath.style.setProperty('--off','0'); return; }
     sheetTrack.classList.remove('free');
     const r = sheetTrack.getBoundingClientRect();
-    const p = clamp(-r.top / (r.height - innerHeight*0.9), 0, 1);
+    const p = clamp(-r.top / Math.max(1, r.height - innerHeight), 0, 1);
     const dist = Math.max(0, film.scrollWidth - innerWidth);
     film.style.transform = `translateX(${-p*dist}px)`;
     const fr = pickFrame.getBoundingClientRect();
