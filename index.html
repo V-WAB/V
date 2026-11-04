@@ -422,6 +422,10 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
 .thumb-pair figure{margin:0;min-width:0}
 .thumb-pair .thumb{margin-top:0;aspect-ratio:1/1}
 .thumb-pair figcaption{font-size:13px;line-height:1.35;color:var(--muted);margin-top:8px}
+/* cover name: full name */
+.name .n1,.name .n2{display:block}
+.name .n2{font-size:.46em;margin-top:.14em;letter-spacing:.01em}
+@media (min-width:900px){.name{white-space:nowrap;font-size:min(6.6vw,16vh,8rem);margin-top:14px}.name .n1,.name .n2{display:inline}.name .n2{font-size:1em;margin:0}}
 </style>
 </head>
 <body>
@@ -441,7 +445,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     <figure class="cover-photo"><img id="portraitImg" src="assets/img/portrait.jpg" alt="Vanessa Woenam Banini, seated, in a black top against a brown backdrop" fetchpriority="high"></figure>
     <div class="wrap cover-inner">
       <p class="dateline"><span>Accra, Ghana</span><span>The founder issue</span><span>No. 01 · 2026</span></p>
-      <h1 class="name" id="name">Vanessa<span class="sr-only"> Woenam Banini</span></h1>
+      <h1 class="name" id="name"><span class="n1">Vanessa</span> <span class="n2">(Woenam) Banini</span></h1>
       <div class="lines">
         <a class="cl" href="#work"><span class="kick">The winner</span><span class="big">Top Intern, Season&nbsp;3</span><span class="sub">How she won TV3's national competition</span></a>
         <a class="cl" href="#about"><span class="kick">The brand</span><span class="big">Shea, refined.</span><span class="sub">Inside Banini Butter, whipped by hand in Accra</span></a>
@@ -463,7 +467,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     <div class="wrap profile">
       <figure class="profile-photo"><img src="assets/img/feature-window.jpg" alt="Vanessa seated on the floor in window light, eyes closed" loading="lazy"></figure>
       <div class="main bio">
-        <h2>Hello, I'm Vanessa.</h2>
+        <h2>Hello, I'm Vanessa (Woenam) Banini.</h2>
         <p>I studied actuarial science at the University of Professional Studies, Accra, and won TV3's <span class="mark" data-mark="a">The Top Intern, Season 3<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, along with a full Master's scholarship from Academic City University.</p>
         <p>Today I'm building <span class="mark" data-mark="b">Legalite<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, a legaltech company, and Banini Butter. Along the way I chaired ASSAG's Educational and Research Committee and pitched Tetrol, my self-heating, self-cooling lunchbox, at the MTN Business Challenge. I'm also a co-founder of Robo Club, where I teach robotics.</p>
       </div>
