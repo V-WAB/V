@@ -433,6 +433,24 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
 .letter .mark{white-space:normal;font-family:var(--display);font-style:italic;font-size:1.12em;color:var(--pen)}
 .letter .signoff{margin-top:32px;font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--muted)}
 .letter .signoff span{display:block;font-style:normal;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--fg);margin-top:4px}
+/* separate pages (about.html, work.html, ...): show only that page's sections */
+body[data-page] main > section{display:none}
+body[data-page="about"] #about,body[data-page="about"] #sheet,body[data-page="work"] #work,body[data-page="talks"] #talks,body[data-page="press"] #press,body[data-page="contact"] #contact{display:block}
+body[data-page] main{padding-top:clamp(8px,2vw,24px)}
+nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decoration-color:var(--pen);text-decoration-thickness:2px;text-underline-offset:6px}
+/* phone menu: the five links sit on a second header row */
+@media (max-width:699px){
+  header .wrap{flex-wrap:wrap;height:auto;row-gap:0;padding-top:6px;padding-bottom:4px}
+  .plate{line-height:44px}
+  nav{flex:1 1 100%;order:3;justify-content:space-between}
+  .navlinks{display:flex;gap:0;justify-content:space-between;flex:1;padding:4px 0 8px;font-size:14px}
+  .navlinks a{padding:6px 0}
+  header .themebtn{position:absolute;right:16px;top:14px}
+  .cover{margin-top:-92px}
+  .cover-inner{padding-top:calc(100px + env(safe-area-inset-top,0px))}
+  .odo-wrap{top:calc(env(safe-area-inset-top,0px) + 104px)}
+  .sheet-pin{top:calc(env(safe-area-inset-top,0px) + 104px);height:calc(100vh - 116px)}
+}
 </style>
 </head>
 <body>
@@ -441,7 +459,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
   <div class="wrap">
     <a class="plate" href="#top" id="plate">Vanessa Woenam Banini</a>
     <nav aria-label="Sections">
-      <span class="navlinks"><a href="#about">About</a><a href="#work">Work</a><a href="#talks">Talks</a><a href="#press">Press</a><a href="#contact">Contact</a></span>
+      <span class="navlinks"><a href="about.html">About</a><a href="work.html">Work</a><a href="talks.html">Talks</a><a href="press.html">Press</a><a href="contact.html">Contact</a></span>
       <button class="themebtn" id="themeBtn" type="button">Dark</button>
     </nav>
   </div>
@@ -649,6 +667,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
   const hero = $('.hero'), name = $('#name'), plate = $('#plate');
   const headerEl = $('header');
   function m1(){
+    if(document.body.dataset.page){ plate.style.opacity=1; plate.style.transform='none'; headerEl.classList.remove('over'); return; }
     if(!on('m1')){ name.style.transform=''; name.style.opacity=''; name.style.fontVariationSettings=''; name.style.fontWeight=''; plate.style.opacity=1; plate.style.transform='none'; headerEl.classList.toggle('over', scrollY < 40); return; }
     const p = clamp(scrollY / (hero.offsetHeight*0.75),0,1);
     const e = p*p*(3-2*p);
