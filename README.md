@@ -8,7 +8,8 @@ Live at **https://vanessa-banini.netlify.app/** (hosted on Netlify, which republ
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole site: text, layout, animations |
+| `index.html` | The whole site: text, layout, animations (the only page file to edit) |
+| `about.html`, `work.html`, `talks.html`, `press.html`, `contact.html` | Separate pages generated from `index.html` by `tools/build_pages.py` |
 | `config.js` | Contact-form settings (Supabase address and public key) |
 | `assets/img/` | Photos |
 | `assets/og.jpg` | The preview image shown when the link is shared |
@@ -32,6 +33,19 @@ The site is hosted on Netlify, connected to this repository:
    `supabaseAnonKey` in `config.js`.
 3. Messages then appear in Supabase under **Table Editor → enquiries**. Visitors can send
    messages but cannot read them.
+
+## Pages
+
+The homepage (`index.html`) is the whole site in one scroll. The menu links open separate pages:
+`about.html`, `work.html`, `talks.html`, `press.html` and `contact.html`.
+
+Those five files are generated from `index.html`, so **only edit `index.html`**, then run:
+
+```bash
+python3 tools/build_pages.py
+```
+
+and commit the regenerated pages along with your change.
 
 ## Updating content
 

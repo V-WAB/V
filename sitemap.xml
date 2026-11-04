@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://vanessa-banini.netlify.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://vanessa-banini.netlify.app/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vanessa-banini.netlify.app/work.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vanessa-banini.netlify.app/talks.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vanessa-banini.netlify.app/press.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://vanessa-banini.netlify.app/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
