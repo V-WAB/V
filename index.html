@@ -418,6 +418,14 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
 .talk h3,.clip h3,.entry h3{font-weight:400}
 .quote blockquote{font-style:normal}
 .tlink{font-family:var(--body);font-style:normal}
+.thumb-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:460px;margin-top:16px}
+.thumb-pair figure{margin:0;min-width:0}
+.thumb-pair .thumb{margin-top:0;aspect-ratio:1/1}
+.thumb-pair figcaption{font-size:13px;line-height:1.35;color:var(--muted);margin-top:8px}
+/* cover name: full name */
+.name .n1,.name .n2{display:block}
+.name .n2{font-size:.46em;margin-top:.14em;letter-spacing:.01em}
+@media (min-width:900px){.name{white-space:nowrap;font-size:min(6.6vw,16vh,8rem);margin-top:14px}.name .n1,.name .n2{display:inline}.name .n2{font-size:1em;margin:0}}
 </style>
 </head>
 <body>
@@ -437,7 +445,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     <figure class="cover-photo"><img id="portraitImg" src="assets/img/portrait.jpg" alt="Vanessa Woenam Banini, seated, in a black top against a brown backdrop" fetchpriority="high"></figure>
     <div class="wrap cover-inner">
       <p class="dateline"><span>Accra, Ghana</span><span>The founder issue</span><span>No. 01 · 2026</span></p>
-      <h1 class="name" id="name">Vanessa<span class="sr-only"> Woenam Banini</span></h1>
+      <h1 class="name" id="name"><span class="n1">Vanessa</span> <span class="n2">(Woenam) Banini</span></h1>
       <div class="lines">
         <a class="cl" href="#work"><span class="kick">The winner</span><span class="big">Top Intern, Season&nbsp;3</span><span class="sub">How she won TV3's national competition</span></a>
         <a class="cl" href="#about"><span class="kick">The brand</span><span class="big">Shea, refined.</span><span class="sub">Inside Banini Butter, whipped by hand in Accra</span></a>
@@ -459,7 +467,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     <div class="wrap profile">
       <figure class="profile-photo"><img src="assets/img/feature-window.jpg" alt="Vanessa seated on the floor in window light, eyes closed" loading="lazy"></figure>
       <div class="main bio">
-        <h2>Hello, I'm Vanessa.</h2>
+        <h2>Hello, I'm Vanessa (Woenam) Banini.</h2>
         <p>I studied actuarial science at the University of Professional Studies, Accra, and won TV3's <span class="mark" data-mark="a">The Top Intern, Season 3<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, along with a full Master's scholarship from Academic City University.</p>
         <p>Today I'm building <span class="mark" data-mark="b">Legalite<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, a legaltech company, and Banini Butter. Along the way I chaired ASSAG's Educational and Research Committee and pitched Tetrol, my self-heating, self-cooling lunchbox, at the MTN Business Challenge. I'm also a co-founder of Robo Club, where I teach robotics.</p>
       </div>
@@ -483,7 +491,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
           <figure class="frame" style="--ar:4/3"><div class="ph"><img src="assets/img/range.jpg" alt="The Banini Butter range of jars and packaging" loading="lazy"></div><figcaption><b>02 · Banini Butter</b>Founder, 2026</figcaption></figure>
           <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></div><figcaption><b>03 · Legalite</b>My legaltech company, 2025</figcaption></figure>
           <figure class="frame" style="--ar:3/4"><div class="ph"><img src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name, holding a bouquet" loading="lazy" style="object-position:50% 30%"></div><figcaption><b>04 · Graduation</b>Actuarial Science, University of Professional Studies, Accra, 2025</figcaption></figure>
-          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini for Student Activist of the Year" loading="lazy"></div><figcaption><b>05 · Chairperson</b>Educational and Research Committee, ASSAG, 2025</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/chairperson.jpg" alt="ASSAG appointees poster for the Educational and Research Committee: Vanessa Banini in the middle as head, with Bettina N.A. Abrokwah, member, and Amanda Dosia, deputy, on either side" loading="lazy"></div><figcaption><b>05 · Chairperson</b>Educational and Research Committee, ASSAG, 2025</figcaption></figure>
           <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></div><figcaption><b>06 · Robo Club</b>Co-founder and robotics instructor, 2025</figcaption></figure>
           <figure class="frame" style="--ar:4/5"><div class="ph"><img src="assets/img/fn-handshake.jpg" alt="Vanessa smiling as she shakes hands at the Business Challenge 2024 grand finale" loading="lazy"></div><figcaption><b>07 · Business Challenge</b>2nd runner-up with Tetrol, 2024</figcaption></figure>
         </div>
@@ -506,7 +514,7 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
             <li class="entry" data-year="2026"><div class="yr">2026 · Founder</div><h3>Banini Butter</h3><p>Whipped shea butter in four blends, sourced from women's cooperatives near Tamale and made in small batches in Accra.</p><img class="thumb" src="assets/img/range.jpg" alt="The Banini Butter range" loading="lazy"></li>
             <li class="entry" data-year="2025"><div class="yr">2025 · Founder</div><h3>Legalite</h3><p>My company, building a legaltech app. I'm pitching it at the Accra LawTech Hangout on 3 December.</p><img class="thumb" src="assets/img/work-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></li>
             <li class="entry" data-year="2025"><div class="yr">2025 · Graduate</div><h3>Actuarial Science, University of Professional Studies, Accra</h3><p>Where the numbers side of the work started.</p><img class="thumb" src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name" loading="lazy" style="object-position:50% 25%"></li>
-            <li class="entry" data-year="2025"><div class="yr">2025 · Chairperson</div><h3>Educational and Research Committee, ASSAG</h3><p>Chaired the committee for a little over a year and ran the Beyond Insurance seminar. Voted Student Activist of the Year and Best Committee Chairperson.</p><img class="thumb" src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini as a nominee for Student Activist of the Year" style="object-position:50% 40%" loading="lazy"></li>
+            <li class="entry" data-year="2025"><div class="yr">2025 · Chairperson</div><h3>Educational and Research Committee, ASSAG</h3><p>Chaired the committee for a little over a year and ran the Beyond Insurance seminar. Voted Student Activist of the Year and Best Committee Chairperson.</p><div class="thumb-pair"><figure><img class="thumb" src="assets/img/chairperson.jpg" alt="ASSAG appointees poster for the Educational and Research Committee: Vanessa Banini in the middle as head, with Bettina N.A. Abrokwah, member, and Amanda Dosia, deputy, on either side" loading="lazy"><figcaption>Chairperson, Educational and Research Committee</figcaption></figure><figure><img class="thumb" src="assets/img/student-activist.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini for Student Activist of the Year" loading="lazy"><figcaption>Student Activist of the Year</figcaption></figure></div></li>
             <li class="entry" data-year="2025"><div class="yr">2025 · Co-founder · Robotics instructor</div><h3>Robo Club</h3><p>Co-founded Robo Club, where I teach robotics.</p><img class="thumb" src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></li>
             <li class="entry" data-year="2024"><div class="yr">2024 · 2nd runner-up</div><h3>Tetrol, MTN Business Challenge</h3><p>Pitched Tetrol, a self-heating, self-cooling lunchbox and bottle flask I designed, at the UPSA Business Challenge 2024, sponsored by MTN Pulse, and placed second runner-up.</p><img class="thumb" src="assets/img/work-tetrol.jpg" alt="The Tetrol self-heating lunchbox, open, filled with food" loading="lazy"></li>
           </ol>
