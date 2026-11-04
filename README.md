@@ -2,7 +2,7 @@
 
 Personal website: one place to find my work, talks, press and links.
 
-Live at **https://v-wab.github.io/v/** once GitHub Pages is switched on (see below).
+Live at **https://vanessa-banini.netlify.app/** (hosted on Netlify, which republishes automatically whenever `main` changes).
 
 ## What's here
 
@@ -15,11 +15,14 @@ Live at **https://v-wab.github.io/v/** once GitHub Pages is switched on (see bel
 | `supabase/migrations/001_enquiries.sql` | Creates the table that stores contact-form messages |
 | `404.html` | Page shown for broken links |
 
-## Switching the site on
+## Hosting
 
-1. On GitHub, open **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, and save.
-3. After a minute the site is live at `https://v-wab.github.io/v/`.
+The site is hosted on Netlify, connected to this repository:
+
+- Build command: none. Publish directory: `.` (the repository root).
+- Every change merged into `main` goes live a minute later.
+- GitHub Pages is switched off for this repository on purpose. This GitHub account's Pages domain is
+  baninibutter.com, so a Pages copy would appear under baninibutter.com/v/ instead of standing on its own.
 
 ## Connecting the contact form
 
@@ -41,5 +44,5 @@ Live at **https://v-wab.github.io/v/** once GitHub Pages is switched on (see bel
 
 ## Using your own domain later
 
-When you buy a domain, add a file named `CNAME` containing just the domain, point the domain's
-DNS at GitHub Pages, then update the addresses in `index.html`, `robots.txt` and `sitemap.xml`.
+When you buy a domain, add it in Netlify under **Domain management**, follow Netlify's DNS steps,
+then update the addresses in `index.html`, `robots.txt` and `sitemap.xml`.
