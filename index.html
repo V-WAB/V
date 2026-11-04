@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Schibsted+Grotesk:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=DM+Serif+Display:ital@0;1&family=Schibsted+Grotesk:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -329,22 +329,6 @@ section:not(.cover){border-top:0}
 h2{font-weight:400;font-variation-settings:'opsz' 96;font-size:clamp(2.5rem,6vw,5rem);line-height:.96;letter-spacing:-.02em;margin-top:12px;max-width:14ch}
 h2::after{content:"";display:block;width:56px;height:3px;background:var(--pen);margin-top:clamp(18px,2.4vw,28px)}
 
-/* contents page */
-.contents{padding-block:clamp(56px,9vw,120px);border-bottom:1px solid var(--fg)}
-.contents-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px}
-@media (min-width:900px){.contents-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}}
-.contents-photo{margin:0}
-.contents-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%}
-.contents-photo figcaption,.cap{font-family:var(--display);font-style:italic;font-size:14px;color:var(--muted);margin-top:10px}
-.contents-title{font-size:clamp(4rem,11vw,9rem);line-height:.82;margin:8px 0 28px;max-width:none}
-.contents-title::after{display:none}
-.toc{list-style:none;margin:0;padding:0;border-top:2px solid var(--fg)}
-.toc a{display:grid;grid-template-columns:3.4rem minmax(0,1fr);column-gap:18px;align-items:baseline;padding:14px 0 15px;border-bottom:1px solid var(--rule);text-decoration:none}
-.toc .pg{grid-row:span 2;font-family:var(--display);font-variation-settings:'opsz' 96;font-size:2.2rem;line-height:.9;font-variant-numeric:lining-nums;color:var(--pen)}
-.toc .dept{font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.toc .ttl{font-family:var(--display);font-style:italic;font-variation-settings:'opsz' 36;font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.2;margin-top:2px}
-.toc a:hover .ttl,.toc a:focus-visible .ttl{color:var(--pen);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-
 /* profile: set in columns like a feature */
 @media (min-width:1100px){.bio{columns:2;column-gap:48px;column-rule:1px solid var(--rule)}.bio p{max-width:none;break-inside:avoid-column}}
 .bio p{font-family:var(--display);font-variation-settings:'opsz' 18;font-size:clamp(1.18rem,1.7vw,1.32rem);line-height:1.55}
@@ -407,6 +391,32 @@ h2::after{content:"";display:block;width:56px;height:3px;background:var(--pen);m
 /* back cover / colophon */
 footer{border-top:2px solid var(--fg)}
 footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+/* ===== Round 2: sturdier type, no empty left column, lighter pages ===== */
+main section:not(.cover),header,footer{--display:'DM Serif Display',Georgia,serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--mono:'DM Sans','Helvetica Neue',Arial,sans-serif}
+main section:not(.cover){font-family:var(--body)}
+.plate{font-weight:400}
+h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;max-width:18ch}
+.folio{font-size:11px;letter-spacing:.16em}
+/* single column on laptops: the empty margin column is gone */
+@media (min-width:960px){.row{grid-template-columns:minmax(0,1fr)}.film{padding-left:max(40px,(100vw - 1200px)/2 + 40px)}}
+.margin:empty{display:none}
+/* profile: photo beside a short bio */
+.profile{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+@media (min-width:900px){.profile{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}}
+.profile-photo{margin:0}
+.profile-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%}
+.bio{columns:auto!important}
+.bio h2{margin:0 0 28px}
+.bio p{font-family:var(--body);font-size:clamp(1.1rem,1.5vw,1.25rem);line-height:1.6;max-width:34em}
+.bio p:first-of-type::first-letter{font-family:inherit;font-size:inherit;float:none;padding:0;color:inherit;line-height:inherit}
+/* photo essay captions: label + one line */
+.frame figcaption{flex-direction:column;gap:4px;font-family:var(--body);font-style:normal;font-size:15px}
+.frame figcaption b{font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.entry .yr,.tmeta,.clip .meta,.quote figcaption,.src{font-family:var(--body)}
+.talk h3,.clip h3,.entry h3{font-weight:400}
+.quote blockquote{font-style:normal}
+.tlink{font-family:var(--body);font-style:normal}
 </style>
 </head>
 <body>
@@ -433,7 +443,7 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
         <a class="cl xl" href="#press"><span class="kick">In the press</span><span class="big">The victory journey</span><span class="sub">What 3News asked her after the finale</span></a>
       </div>
       <div class="lines lines-r">
-        <a class="cl" href="#figures"><span class="kick">The scholarship</span><span class="big num"><small>GH¢</small>107,700</span><span class="sub">A full Master's from Academic City University</span></a>
+        <a class="cl" href="#work"><span class="kick">The scholarship</span><span class="big num"><small>GH¢</small>107,700</span><span class="sub">A full Master's from Academic City University</span></a>
         <a class="cl" href="#talks"><span class="kick">On stage next</span><span class="big">Pitching Legalite</span><span class="sub">Her legaltech app, at the Accra LawTech Hangout on 3 December</span></a>
       </div>
       <div class="cover-foot">
@@ -443,110 +453,45 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
     </div>
   </section>
 
-    <section class="contents" id="contents" aria-labelledby="contentsTitle">
-    <div class="wrap contents-grid">
-      <figure class="contents-photo"><img src="assets/img/feature-window.jpg" alt="Vanessa seated on the floor in window light, eyes closed" loading="lazy"><figcaption>Vanessa Woenam Banini, Accra</figcaption></figure>
-      <div class="contents-list">
-        <p class="eyebrow">In this issue</p>
-        <h2 class="contents-title" id="contentsTitle">Contents</h2>
-        <ol class="toc">
-          <li><a href="#about"><span class="pg">02</span><span class="dept">Profile</span><span class="ttl">The bio</span></a></li>
-          <li><a href="#sheet"><span class="pg">04</span><span class="dept">Photo essay</span><span class="ttl">A few frames from the last two years</span></a></li>
-          <li><a href="#focus"><span class="pg">06</span><span class="dept">Focus</span><span class="ttl">My work is about…</span></a></li>
-          <li><a href="#figures"><span class="pg">08</span><span class="dept">By the numbers</span><span class="ttl">Small batches, measured carefully</span></a></li>
-          <li><a href="#work"><span class="pg">10</span><span class="dept">Career</span><span class="ttl">What I've built, newest first</span></a></li>
-          <li><a href="#talks"><span class="pg">12</span><span class="dept">On stage</span><span class="ttl">On stage, on camera, in front of judges</span></a></li>
-          <li><a href="#press"><span class="pg">14</span><span class="dept">Clippings</span><span class="ttl">Written about, quoted, interviewed</span></a></li>
-          <li><a href="#contact"><span class="pg">16</span><span class="dept">Letters</span><span class="ttl">Write to me</span></a></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="sec">
-    <div class="wrap"><p class="folio"><span>Profile</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 02</span></p></div>
-    <div class="wrap row">
-      <div class="margin">
-        <div class="notes">
-          <p class="note" data-note="a">Shea kernels gathered in the Northern Region</p>
-          <p class="note" data-note="b">The thesis, in one line</p>
-        </div>
-      </div>
+    <section id="about" class="sec">
+    <div class="wrap"><p class="folio"><span>Profile</span><span>p. 02</span></p></div>
+    <div class="wrap profile">
+      <figure class="profile-photo"><img src="assets/img/feature-window.jpg" alt="Vanessa seated on the floor in window light, eyes closed" loading="lazy"></figure>
       <div class="main bio">
-        <p>My mother never called it skincare. She rubbed shea butter into our skin every morning because that was simply what we knew. Today I run Banini Butter, a whipped shea brand made in Accra from nuts gathered by <span class="mark" data-mark="a">women's cooperatives<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span> near Tamale.</p>
-        <p>The gap was never the butter. It was everything around it: the texture, the packaging, the standard. My work is giving ingredients Ghana already has the brand they deserve, so they reach the <span class="mark" data-mark="b">highest shelves<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 5 C 22 8, 40 2, 60 6 S 88 7, 99 4"/></svg></span> without pretending to be from anywhere else.</p>
+        <h2>Hello, I'm Vanessa.</h2>
+        <p>I studied actuarial science at the University of Professional Studies, Accra, and won TV3's <span class="mark" data-mark="a">The Top Intern, Season 3<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, along with a full Master's scholarship from Academic City University.</p>
+        <p>Today I'm building <span class="mark" data-mark="b">Legalite<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, a legaltech company, and Banini Butter. Along the way I chaired ASSAG's Educational and Research Committee and pitched Tetrol, my self-heating, self-cooling lunchbox, at the MTN Business Challenge.</p>
       </div>
     </div>
   </section>
 
   <section id="sheet">
-    <div class="wrap"><p class="folio"><span>Photo essay</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 04</span></p></div>
+    <div class="wrap"><p class="folio"><span>Photo essay</span><span>p. 04</span></p></div>
     <div class="wrap row sheet-head">
       <div class="margin">
       </div>
       <div class="main">
-        <p class="eyebrow">Field notes</p>
-        <h2>A few frames from the last two years.</h2>
+        <p class="eyebrow">Photo essay</p>
+        <h2>One picture for every part of my life.</h2>
       </div>
     </div>
     <div class="sheet-track" id="sheetTrack">
       <div class="sheet-pin" id="sheetPin">
         <div class="film" id="film">
-          <figure class="frame" style="--ar:4/5"><div class="ph"><img src="assets/img/fn-graduation-fountain.jpg" alt="Vanessa in graduation gown and kente stole, holding a bouquet by a fountain" loading="lazy"></div><figcaption><b>01</b>Graduation day</figcaption></figure>
-          <figure class="frame" style="--ar:3/4"><div class="ph"><img src="assets/img/fn-graduation-cap.jpg" alt="From behind: a red graduation cap, long braids and a bouquet of red and white flowers" loading="lazy"></div><figcaption><b>02</b>Cap, gown, flowers</figcaption></figure>
-          <figure class="frame" style="--ar:4/5"><div class="ph"><img src="assets/img/fn-laugh.jpg" alt="Vanessa in a bright orange top, laughing" loading="lazy"></div><figcaption><b>03</b>Off duty</figcaption></figure>
-          <figure class="frame" id="pickFrame" style="--ar:4/5"><svg class="pick" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M52 3 C 82 2, 99 22, 98 50 C 97 80, 76 98, 48 97 C 18 96, 2 78, 3 49 C 4 22, 22 5, 56 6"/></svg><div class="ph"><img src="assets/img/fn-stage.jpg" alt="Vanessa in a red dress on stage at The Top Intern, smiling" loading="lazy"></div><figcaption><b>04</b>On The Top Intern stage, Season 3</figcaption></figure>
-          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-handshake.jpg" alt="Vanessa shaking hands with the organisers at the Business Challenge 2024 grand finale" loading="lazy"></div><figcaption><b>05</b>Business Challenge 2024, grand finale</figcaption></figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="focus" id="focus">
-    <div class="wrap"><p class="folio"><span>Focus</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 06</span></p></div>
-    <div class="focus-track" id="focusTrack">
-      <div class="focus-pin">
-        <div class="wrap row">
-          <div class="margin">
-          </div>
-          <div class="main focus-main">
-            <div class="focus-text">
-              <p class="eyebrow">Focus areas <span class="sample">Sample</span></p>
-              <p class="typeset"><span class="lead">My work is about</span><span class="word" id="word" aria-live="polite">shea.</span></p>
-              <p class="focus-desc" id="focusDesc">Building a premium, export-ready brand around an ingredient West Africa has used for centuries.</p>
-              <ol class="focus-steps" id="focusSteps"><li class="on">Shea</li><li>Livelihoods</li><li>Made in Ghana</li><li>Agro-processing</li></ol>
-            </div>
-            <div class="focus-pics" id="focusPics" aria-hidden="true">
-              <img class="on" src="assets/img/basket.jpg" alt="">
-              <img src="assets/img/nuts.jpg" alt="">
-              <img src="assets/img/sizes.jpg" alt="">
-              <img src="assets/img/whipped.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="figures">
-    <div class="wrap"><p class="folio"><span>By the numbers</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 08</span></p></div>
-    <div class="wrap row">
-      <div class="margin">
-      </div>
-      <div class="main">
-        <p class="eyebrow">In numbers</p>
-        <h2>Small batches, measured carefully.</h2>
-        <div class="figs">
-          <div class="fig"><span class="num" data-ink><small style="font-size:.38em;letter-spacing:0">GH¢</small>107,700</span><h3>Master's scholarship</h3><p>Awarded in full by Academic City University to the winner of The Top Intern.</p><span class="src">Source: Academic City University, Aug 2026</span></div>
-          <div class="fig"><span class="num" data-ink>36</span><h3>Finishes in the range</h3><p>Four blends, three skin types, three jar sizes.</p><span class="src">Source: Banini product range</span></div>
-          <div class="fig"><span class="num" data-ink>24<small style="font-size:.4em;letter-spacing:0">h</small></span><h3>With every tester</h3><p>Each tester used the jar for a full day before a price was set.</p><span class="src">Source: consumer testing</span></div>
+          <figure class="frame" style="--ar:3/4"><div class="ph"><img src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name, holding a bouquet" loading="lazy" style="object-position:50% 30%"></div><figcaption><b>01 · Graduation</b>Actuarial Science, University of Professional Studies, Accra</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></div><figcaption><b>02 · Legalite</b>My legaltech company</figcaption></figure>
+          <figure class="frame" style="--ar:4/3"><div class="ph"><img src="assets/img/range.jpg" alt="The Banini Butter range of jars and packaging" loading="lazy"></div><figcaption><b>03 · Banini Butter</b>Founder</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini for Student Activist of the Year" loading="lazy"></div><figcaption><b>04 · Chairperson</b>Educational and Research Committee, ASSAG</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-robo-club.jpg" alt="Children working on laptops at a Robo Club session" loading="lazy"></div><figcaption><b>05 · Robo Club</b>Robo Club</figcaption></figure>
+          <figure class="frame" id="pickFrame" style="--ar:4/5"><svg class="pick" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M52 3 C 82 2, 99 22, 98 50 C 97 80, 76 98, 48 97 C 18 96, 2 78, 3 49 C 4 22, 22 5, 56 6"/></svg><div class="ph"><img src="assets/img/fn-stage.jpg" alt="Vanessa in a red dress on stage at The Top Intern, smiling" loading="lazy"></div><figcaption><b>06 · The Top Intern</b>Season 3 winner, TV3</figcaption></figure>
+          <figure class="frame" style="--ar:1/1"><div class="ph"><img src="assets/img/fn-handshake.jpg" alt="Vanessa shaking hands with the organisers at the Business Challenge 2024 grand finale" loading="lazy"></div><figcaption><b>07 · Business Challenge</b>2nd runner-up with Tetrol, 2024</figcaption></figure>
         </div>
       </div>
     </div>
   </section>
 
   <section class="sec" id="work">
-    <div class="wrap"><p class="folio"><span>Career</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 10</span></p></div>
+    <div class="wrap"><p class="folio"><span>Career</span><span>p. 06</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -559,7 +504,7 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
             <li class="entry on" data-year="2026"><div class="yr">2026 · Founder</div><h3>Legalite</h3><p>My company, building a legaltech app. I'm pitching it at the Accra LawTech Hangout on 3 December.</p><img class="thumb" src="assets/img/work-legalite.jpg" alt="The Legalite logo: a set of scales above the words Legalite, Legal Technology" loading="lazy"></li>
             <li class="entry" data-year="2026"><div class="yr">2026 · Founder</div><h3>Banini Butter</h3><p>Whipped shea butter in four blends, sourced from women's cooperatives near Tamale and made in small batches in Accra.</p><img class="thumb" src="assets/img/range.jpg" alt="The Banini Butter range" loading="lazy"></li>
             <li class="entry" data-year="2026"><div class="yr">2026 · Winner</div><h3>TV3 The Top Intern, Season 3</h3><p>Won the season on national television, with a full Master's scholarship from Academic City University.</p><img class="thumb" src="assets/img/work-top-intern.jpg" alt="TV3 Top Intern Season 3 portrait card of Vanessa Woenam Banini, University of Professional Studies Accra, Actuarial Science" style="object-position:50% 20%" loading="lazy"></li>
-            <li class="entry" data-year="2025"><div class="yr">2025 · Chairperson</div><h3>Educational and Research Committee, ASSAG</h3><p>Chaired the committee at the Actuarial Science Students' Association of Ghana for a little over a year. Held the Beyond Insurance seminar to show students the range of careers actuarial science opens up. At the end of my tenure I was voted Student Activist of the Year and Best Committee Chairperson.</p><img class="thumb" src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini as a nominee for Student Activist of the Year" style="object-position:50% 40%" loading="lazy"></li>
+            <li class="entry" data-year="2025"><div class="yr">2025 · Chairperson</div><h3>Educational and Research Committee, ASSAG</h3><p>Chaired the committee for a little over a year and ran the Beyond Insurance seminar. Voted Student Activist of the Year and Best Committee Chairperson.</p><img class="thumb" src="assets/img/work-assag-awards.jpg" alt="ASSAG Excellence Awards poster naming Vanessa Banini as a nominee for Student Activist of the Year" style="object-position:50% 40%" loading="lazy"></li>
             <li class="entry" data-year="2024"><div class="yr">2024 · 2nd runner-up</div><h3>Tetrol, MTN Business Challenge</h3><p>Pitched Tetrol, a self-heating, self-cooling lunchbox and bottle flask I designed, at the UPSA Business Challenge 2024, sponsored by MTN Pulse, and placed second runner-up.</p><img class="thumb" src="assets/img/work-tetrol.jpg" alt="The Tetrol self-heating lunchbox, open, filled with food" loading="lazy"></li>
             <li class="entry" data-year="2022"><div class="yr">2022 <span class="sample">Year to confirm</span></div><h3>Actuarial Science, University of Professional Studies, Accra</h3><p>Where the numbers side of the work started.</p><img class="thumb" src="assets/img/work-upsa-graduation.jpg" alt="Vanessa at graduation in a kente stole printed with her name" loading="lazy" style="object-position:50% 25%"></li>
           </ol>
@@ -569,7 +514,7 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
   </section>
 
   <section class="sec" id="talks">
-    <div class="wrap"><p class="folio"><span>On stage</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 12</span></p></div>
+    <div class="wrap"><p class="folio"><span>On stage</span><span>p. 08</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -613,7 +558,7 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
   </section>
 
   <section class="sec" id="press">
-    <div class="wrap"><p class="folio"><span>Clippings</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 14</span></p></div>
+    <div class="wrap"><p class="folio"><span>Clippings</span><span>p. 10</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -633,7 +578,7 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
   </section>
 
   <section class="sec" id="contact">
-    <div class="wrap"><p class="folio"><span>Letters</span><span class="folio-mid">Vanessa Woenam Banini · The founder issue · No. 01</span><span>p. 16</span></p></div>
+    <div class="wrap"><p class="folio"><span>Letters</span><span>p. 12</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -745,6 +690,7 @@ footer .wrap{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-tr
     word.setAttribute('aria-label', text);
   }
   function m3(){
+    if(!track) return;
     const r = track.getBoundingClientRect();
     const p = clamp(-r.top / (r.height - innerHeight), 0, .9999);
     const i = Math.floor(p * focus.length);
