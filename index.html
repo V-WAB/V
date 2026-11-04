@@ -426,6 +426,13 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
 .name .n1,.name .n2{display:block}
 .name .n2{font-size:.46em;margin-top:.14em;letter-spacing:.01em}
 @media (min-width:900px){.name{white-space:nowrap;font-size:min(6.6vw,16vh,8rem);margin-top:14px}.name .n1,.name .n2{display:inline}.name .n2{font-size:1em;margin:0}}
+/* profile as a letter */
+.letter h2{font-style:italic;max-width:none}
+.letter h2::after{margin-top:22px}
+.letter p{max-width:32em}
+.letter .mark{white-space:normal;font-family:var(--display);font-style:italic;font-size:1.12em;color:var(--pen)}
+.letter .signoff{margin-top:32px;font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--muted)}
+.letter .signoff span{display:block;font-style:normal;font-size:clamp(1.5rem,2.4vw,2rem);color:var(--fg);margin-top:4px}
 </style>
 </head>
 <body>
@@ -466,10 +473,12 @@ h2{font-size:clamp(2.2rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.01em;m
     <div class="wrap"><p class="folio"><span>Profile</span><span>p. 02</span></p></div>
     <div class="wrap profile">
       <figure class="profile-photo"><img src="assets/img/feature-window.jpg" alt="Vanessa seated on the floor in window light, eyes closed" loading="lazy"></figure>
-      <div class="main bio">
-        <h2>Hello, I'm Vanessa (Woenam) Banini.</h2>
-        <p>I studied actuarial science at the University of Professional Studies, Accra, and won TV3's <span class="mark" data-mark="a">The Top Intern, Season 3<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, along with a full Master's scholarship from Academic City University.</p>
-        <p>Today I'm building <span class="mark" data-mark="b">Legalite<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span>, a legaltech company, and Banini Butter. Along the way I chaired ASSAG's Educational and Research Committee and pitched Tetrol, my self-heating, self-cooling lunchbox, at the MTN Business Challenge. I'm also a co-founder of Robo Club, where I teach robotics.</p>
+      <div class="main bio letter">
+        <h2>To you who found this page,</h2>
+        <p>Most of what you will see here began before I felt ready: a seminar for students unsure of their path, a lunchbox built for a pitch, a room of children learning to build robots, a company still taking shape. None of it waited for permission, and neither should you.</p>
+        <p>I trained to measure risk, and the lesson I keep returning to is simple: <span class="mark" data-mark="a">the greater risk is waiting.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M1 6 C 18 3, 34 8, 52 5 S 84 3, 99 6"/></svg></span> Waiting to be chosen, to be certain, to feel qualified. Start where you are, with what you have, and let the work teach you the rest.</p>
+        <p>Whatever you are carrying, an idea, a skill, a question no one has answered yet, it is worth building. Build it well, build it here, and as you rise, keep the door open for whoever comes next.</p>
+        <p class="signoff">With love and blessings,<span>Vanessa (Woenam) Banini</span></p>
       </div>
     </div>
   </section>
