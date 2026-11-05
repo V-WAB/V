@@ -486,6 +486,9 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
 .sec > .wrap.row,.sec > .wrap:not(:first-child){margin-top:0}
 .sec > .bp-grid{margin-top:0}
 .sec > .wrap + .wrap{margin-top:clamp(40px,6vw,72px)}
+/* cover without the date line: name, cover lines, foot */
+.cover-inner{grid-template-rows:auto minmax(0,1fr) auto}
+@media (min-width:900px){.cover-inner{grid-template-rows:auto minmax(0,1fr) auto}.name{margin-top:4px}}
 </style>
 </head>
 <body data-page="contact">
@@ -504,7 +507,6 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   <section class="hero cover" id="top" aria-label="Introduction">
     <figure class="cover-photo"><img id="portraitImg" src="assets/img/portrait.jpg" alt="Vanessa Woenam Banini, seated, in a black top against a brown backdrop" fetchpriority="high"></figure>
     <div class="wrap cover-inner">
-      <p class="dateline"><span>Accra, Ghana</span><span>The founder issue</span><span>No. 01 · 2026</span></p>
       <h1 class="name" id="name"><span class="n1">Vanessa</span> <span class="n2">(Woenam) Banini</span></h1>
       <div class="lines">
         <a class="cl" href="#work"><span class="kick">The winner</span><span class="big">Top Intern, Season&nbsp;3</span><span class="sub">How she won TV3's national competition</span></a>
