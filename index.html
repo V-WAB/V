@@ -62,7 +62,7 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--pen);outline-offset:3px}
@@ -452,16 +452,35 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   .odo-wrap{top:calc(env(safe-area-inset-top,0px) + 104px)}
   .sheet-pin{top:calc(env(safe-area-inset-top,0px) + 104px);height:calc(100vh - 116px)}
 }
-/* contact: photo beside the letter form, like the profile */
-.contact-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
-@media (min-width:900px){.contact-layout{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}}
-.contact-photo{margin:0}
-.contact-photo .ph{position:relative;isolation:isolate}
-.contact-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
-.contact-photo .ph::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--pen);z-index:-1}
-.contact-photo figcaption{font-family:var(--display);font-style:italic;font-size:15px;color:var(--muted);margin-top:24px}
-@media (max-width:899px){.contact-photo img{aspect-ratio:4/3;object-position:50% 25%}.contact-photo .ph::before{inset:10px -10px -10px 10px}}
-#contact .compose{margin-top:20px;font-size:clamp(1.5rem,2.6vw,2.2rem)}
+/* contact: the magazine's back page */
+.backpage{--cv-ink:#F4EADB;--cv-dim:rgba(244,234,219,.74);--cv-hot:#F2665D;color:var(--cv-ink);
+  background:radial-gradient(110% 85% at 72% 38%,#3b1b0d 0%,#26110a 55%,#120704 100%);padding-bottom:clamp(36px,5vw,64px)}
+.backpage .folio{color:var(--cv-dim);border-bottom-color:rgba(244,234,219,.35)}
+.backpage .folio span:first-child{color:var(--cv-hot)}
+.bp-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;margin-top:clamp(32px,6vw,72px)}
+@media (min-width:900px){.bp-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}}
+.bp-kick{font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cv-hot);margin:0}
+.backpage .bp-title{font-family:'Bodoni Moda','Bodoni 72','Didot',Georgia,serif;font-weight:400;font-variation-settings:'opsz' 96;font-size:clamp(3.4rem,8vw,7rem);line-height:.9;letter-spacing:-.02em;color:var(--cv-ink);margin:10px 0 0;max-width:none}
+.backpage .bp-title::after{display:none}
+.bp-title em{color:var(--cv-hot)}
+.bp-deck{color:var(--cv-dim);font-size:1.05rem;line-height:1.5;max-width:36ch;margin:18px 0 34px}
+.reply-card{--paper:#F6F0E6;--fg:#1C1410;--muted:#6E6157;--rule:#CDBFAE;--pen:#B0392D;background:var(--paper);color:var(--fg);
+  padding:clamp(20px,3vw,32px);outline:1.5px dashed rgba(244,234,219,.6);outline-offset:9px;margin:9px}
+.reply-card .cut{display:flex;justify-content:space-between;gap:12px;margin:0 0 4px;font-family:var(--body);font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--pen)}
+.reply-card .cut span:last-child{color:var(--muted)}
+#contact .compose{margin-top:10px;font-size:clamp(1.3rem,2.2vw,1.8rem)}
+#contact .fields{margin-top:22px}
+.bp-photo{margin:0}
+.bp-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;
+  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
+.bp-photo figcaption{font-family:var(--display);font-style:italic;font-size:15px;color:var(--cv-dim);margin-top:6px}
+@media (max-width:899px){.bp-photo{order:-1}.bp-photo img{aspect-ratio:4/3;object-position:50% 25%}}
+.bp-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:clamp(40px,6vw,72px);padding-top:18px;border-top:1px solid rgba(244,234,219,.3)}
+.bp-next{display:block;text-decoration:none;min-width:0}
+.bp-next .kick{display:block;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cv-hot)}
+.bp-next .big{display:block;font-family:'Bodoni Moda','Bodoni 72','Didot',Georgia,serif;font-style:italic;font-variation-settings:'opsz' 60;font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1.05;margin-top:4px;color:var(--cv-ink)}
+.bp-next .sub{display:block;font-size:13px;color:var(--cv-dim);margin-top:4px}
+.bp-next:hover .big{text-decoration:underline;text-decoration-color:var(--cv-hot);text-decoration-thickness:2px;text-underline-offset:5px}
 </style>
 </head>
 <body>
@@ -629,26 +648,34 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
     </div>
   </section>
 
-  <section class="sec" id="contact">
-    <div class="wrap"><p class="folio"><span>Letters</span><span>p. 12</span></p></div>
-    <div class="wrap contact-layout">
-      <figure class="contact-photo"><div class="ph"><img src="assets/img/contact.jpg" alt="Vanessa laughing, in a bright orange top" loading="lazy"></div><figcaption>Vanessa (Woenam) Banini, Accra</figcaption></figure>
-      <div class="main">
-        <p class="eyebrow">Contact</p>
-        <h2>Write to me.</h2>
-        <form id="form" novalidate>
-          <p class="compose">I'm writing from <label class="sr-only" for="who">Who you are</label><select id="who"></select> about <label class="sr-only" for="what">What it's about</label><select id="what"></select>.</p>
-          <div class="fields">
-            <label for="fname">Your name<input id="fname" autocomplete="name" required maxlength="120"></label>
-            <label for="forg">Organisation<input id="forg" autocomplete="organization" maxlength="160"></label>
-            <label for="fmail" class="wide">Email<input id="fmail" type="email" autocomplete="email" required maxlength="200"></label>
-            <label for="fmsg" class="wide">Message<textarea id="fmsg" rows="3" required maxlength="4000"></textarea></label>
-            <label for="fweb" class="hp" aria-hidden="true">Website<input id="fweb" tabindex="-1" autocomplete="off"></label>
-          </div>
-          <div class="send"><button type="submit" id="sendBtn">Send enquiry</button><output id="status" for="who what fname fmail">Your message comes straight to me. My personal contact details are not published here.</output></div>
-        </form>
+  <section class="sec backpage" id="contact">
+    <div class="wrap"><p class="folio"><span>Back page</span><span>p. 12</span></p></div>
+    <div class="wrap bp-grid">
+      <div class="bp-text">
+        <p class="bp-kick">Letters</p>
+        <h2 class="bp-title">Write <em>to me.</em></h2>
+        <p class="bp-deck">For interviews, talks, partnerships, or simply to say hello.</p>
+        <div class="reply-card">
+          <p class="cut"><span>&#9986; Reply card</span><span>No stamp needed</span></p>
+            <form id="form" novalidate>
+              <p class="compose">I'm writing from <label class="sr-only" for="who">Who you are</label><select id="who"></select> about <label class="sr-only" for="what">What it's about</label><select id="what"></select>.</p>
+              <div class="fields">
+                <label for="fname">Your name<input id="fname" autocomplete="name" required maxlength="120"></label>
+                <label for="forg">Organisation<input id="forg" autocomplete="organization" maxlength="160"></label>
+                <label for="fmail" class="wide">Email<input id="fmail" type="email" autocomplete="email" required maxlength="200"></label>
+                <label for="fmsg" class="wide">Message<textarea id="fmsg" rows="3" required maxlength="4000"></textarea></label>
+                <label for="fweb" class="hp" aria-hidden="true">Website<input id="fweb" tabindex="-1" autocomplete="off"></label>
+              </div>
+              <div class="send"><button type="submit" id="sendBtn">Send enquiry</button><output id="status" for="who what fname fmail">Your message comes straight to me. My personal contact details are not published here.</output></div>
+            </form>
+        </div>
       </div>
+      <figure class="bp-photo"><img src="assets/img/contact.jpg" alt="Vanessa laughing, in a bright orange top" loading="lazy"><figcaption>Vanessa (Woenam) Banini, Accra</figcaption></figure>
     </div>
+    <div class="wrap"><div class="bp-foot">
+      <a class="bp-next" href="talks.html"><span class="kick">Next issue</span><span class="big">Pitching Legalite</span><span class="sub">Accra LawTech Hangout, 3 December</span></a>
+      <div class="issue"><svg class="barcode" viewBox="0 0 92 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="1.5" height="40"/><rect x="2.5" y="0" width="2" height="40"/><rect x="6.5" y="0" width="1" height="40"/><rect x="8.5" y="0" width="3" height="40"/><rect x="12.5" y="0" width="1.5" height="40"/><rect x="16.0" y="0" width="1" height="40"/><rect x="19.0" y="0" width="1" height="40"/><rect x="21.0" y="0" width="1" height="40"/><rect x="23.5" y="0" width="2" height="40"/><rect x="26.5" y="0" width="1" height="40"/><rect x="28.5" y="0" width="3" height="40"/><rect x="33.0" y="0" width="1" height="40"/><rect x="36.0" y="0" width="1" height="40"/><rect x="38.0" y="0" width="3" height="40"/><rect x="42.0" y="0" width="3" height="40"/><rect x="47.0" y="0" width="2" height="40"/><rect x="50.0" y="0" width="1" height="40"/><rect x="52.0" y="0" width="3" height="40"/><rect x="56.0" y="0" width="1.5" height="40"/><rect x="59.0" y="0" width="1" height="40"/><rect x="62.0" y="0" width="1" height="40"/><rect x="65.0" y="0" width="1.5" height="40"/><rect x="68.5" y="0" width="1" height="40"/><rect x="70.5" y="0" width="3" height="40"/><rect x="75.5" y="0" width="1" height="40"/><rect x="78.0" y="0" width="1" height="40"/><rect x="81.0" y="0" width="1" height="40"/><rect x="84.0" y="0" width="1" height="40"/><rect x="87.0" y="0" width="1" height="40"/><rect x="89.5" y="0" width="3" height="40"/></svg><span>Vanessa (Woenam) Banini<br>No. 01 · 2026 · Accra, Ghana</span></div>
+    </div></div>
   </section>
 </main>
 
