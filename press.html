@@ -672,7 +672,7 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
                 <label for="fmsg" class="wide">Message<textarea id="fmsg" rows="3" required maxlength="4000"></textarea></label>
                 <label for="fweb" class="hp" aria-hidden="true">Website<input id="fweb" tabindex="-1" autocomplete="off"></label>
               </div>
-              <div class="send"><button type="submit" id="sendBtn">Send enquiry</button><output id="status" for="who what fname fmail">Your message comes straight to me. My personal contact details are not published here.</output></div>
+              <div class="send"><button type="submit" id="sendBtn">Send enquiry</button><output id="status" for="who what fname fmail" aria-live="polite"></output></div>
             </form>
         </div>
       </div>
