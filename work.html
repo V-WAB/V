@@ -452,6 +452,16 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   .odo-wrap{top:calc(env(safe-area-inset-top,0px) + 104px)}
   .sheet-pin{top:calc(env(safe-area-inset-top,0px) + 104px);height:calc(100vh - 116px)}
 }
+/* contact: photo beside the letter form, like the profile */
+.contact-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+@media (min-width:900px){.contact-layout{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}}
+.contact-photo{margin:0}
+.contact-photo .ph{position:relative;isolation:isolate}
+.contact-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.contact-photo .ph::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--pen);z-index:-1}
+.contact-photo figcaption{font-family:var(--display);font-style:italic;font-size:15px;color:var(--muted);margin-top:24px}
+@media (max-width:899px){.contact-photo img{aspect-ratio:4/3;object-position:50% 25%}.contact-photo .ph::before{inset:10px -10px -10px 10px}}
+#contact .compose{margin-top:20px;font-size:clamp(1.5rem,2.6vw,2.2rem)}
 </style>
 </head>
 <body data-page="work">
@@ -621,11 +631,11 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
 
   <section class="sec" id="contact">
     <div class="wrap"><p class="folio"><span>Letters</span><span>p. 12</span></p></div>
-    <div class="wrap row">
-      <div class="margin">
-      </div>
+    <div class="wrap contact-layout">
+      <figure class="contact-photo"><div class="ph"><img src="assets/img/contact.jpg" alt="Vanessa laughing, in a bright orange top" loading="lazy"></div><figcaption>Vanessa (Woenam) Banini, Accra</figcaption></figure>
       <div class="main">
         <p class="eyebrow">Contact</p>
+        <h2>Write to me.</h2>
         <form id="form" novalidate>
           <p class="compose">I'm writing from <label class="sr-only" for="who">Who you are</label><select id="who"></select> about <label class="sr-only" for="what">What it's about</label><select id="what"></select>.</p>
           <div class="fields">
