@@ -481,6 +481,11 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
 .bp-next .big{display:block;font-family:'Bodoni Moda','Bodoni 72','Didot',Georgia,serif;font-style:italic;font-variation-settings:'opsz' 60;font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1.05;margin-top:4px;color:var(--cv-ink)}
 .bp-next .sub{display:block;font-size:13px;color:var(--cv-dim);margin-top:4px}
 .bp-next:hover .big{text-decoration:underline;text-decoration-color:var(--cv-hot);text-decoration-thickness:2px;text-underline-offset:5px}
+/* no running heads: give each section its own top spacing */
+.sec{padding-top:clamp(56px,9vw,112px)}
+.sec > .wrap.row,.sec > .wrap:not(:first-child){margin-top:0}
+.sec > .bp-grid{margin-top:0}
+.sec > .wrap + .wrap{margin-top:clamp(40px,6vw,72px)}
 </style>
 </head>
 <body>
@@ -511,14 +516,13 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
         <a class="cl" href="#talks"><span class="kick">On stage next</span><span class="big">Pitching Legalite</span><span class="sub">Her legaltech app, at the Accra LawTech Hangout on 3 December</span></a>
       </div>
       <div class="cover-foot">
-        <p class="sell">Made in Ghana, <em>made to travel.</em></p>
+        <p class="sell">Built on faith, <em>driven by purpose.</em></p>
         <div class="issue"><svg class="barcode" viewBox="0 0 92 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="0" width="1.5" height="40"/><rect x="2.5" y="0" width="2" height="40"/><rect x="6.5" y="0" width="1" height="40"/><rect x="8.5" y="0" width="3" height="40"/><rect x="12.5" y="0" width="1.5" height="40"/><rect x="16.0" y="0" width="1" height="40"/><rect x="19.0" y="0" width="1" height="40"/><rect x="21.0" y="0" width="1" height="40"/><rect x="23.5" y="0" width="2" height="40"/><rect x="26.5" y="0" width="1" height="40"/><rect x="28.5" y="0" width="3" height="40"/><rect x="33.0" y="0" width="1" height="40"/><rect x="36.0" y="0" width="1" height="40"/><rect x="38.0" y="0" width="3" height="40"/><rect x="42.0" y="0" width="3" height="40"/><rect x="47.0" y="0" width="2" height="40"/><rect x="50.0" y="0" width="1" height="40"/><rect x="52.0" y="0" width="3" height="40"/><rect x="56.0" y="0" width="1.5" height="40"/><rect x="59.0" y="0" width="1" height="40"/><rect x="62.0" y="0" width="1" height="40"/><rect x="65.0" y="0" width="1.5" height="40"/><rect x="68.5" y="0" width="1" height="40"/><rect x="70.5" y="0" width="3" height="40"/><rect x="75.5" y="0" width="1" height="40"/><rect x="78.0" y="0" width="1" height="40"/><rect x="81.0" y="0" width="1" height="40"/><rect x="84.0" y="0" width="1" height="40"/><rect x="87.0" y="0" width="1" height="40"/><rect x="89.5" y="0" width="3" height="40"/></svg><span>Vanessa Woenam Banini</span></div>
       </div>
     </div>
   </section>
 
     <section id="about" class="sec">
-    <div class="wrap"><p class="folio"><span>Profile</span><span>p. 02</span></p></div>
     <div class="wrap profile">
       <figure class="profile-photo"><img src="assets/img/feature-window.jpg" alt="Vanessa seated on the floor in window light, eyes closed" loading="lazy"></figure>
       <div class="main bio letter">
@@ -532,7 +536,6 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   </section>
 
   <section id="sheet">
-    <div class="wrap"><p class="folio"><span>Photo essay</span><span>p. 04</span></p></div>
     <div class="wrap row sheet-head">
       <div class="margin">
       </div>
@@ -557,7 +560,6 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   </section>
 
   <section class="sec" id="work">
-    <div class="wrap"><p class="folio"><span>Career</span><span>p. 06</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -581,7 +583,6 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   </section>
 
   <section class="sec" id="talks">
-    <div class="wrap"><p class="folio"><span>On stage</span><span>p. 08</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -625,7 +626,6 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   </section>
 
   <section class="sec" id="press">
-    <div class="wrap"><p class="folio"><span>Clippings</span><span>p. 10</span></p></div>
     <div class="wrap row">
       <div class="margin">
       </div>
@@ -649,7 +649,6 @@ nav a[aria-current="page"]{color:var(--fg);text-decoration:underline;text-decora
   </section>
 
   <section class="sec backpage" id="contact">
-    <div class="wrap"><p class="folio"><span>Back page</span><span>p. 12</span></p></div>
     <div class="wrap bp-grid">
       <div class="bp-text">
         <p class="bp-kick">Letters</p>
